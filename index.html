@@ -13,7 +13,7 @@
     <style>
         body{
             font-family: 'Faustina', serif;
-            background-image:url(./image/navbar-bcc.jpg);
+            background-image:url(./image/bcc.png);
         }
 
         .index_banner{
@@ -39,13 +39,21 @@
         .index_bannerTitle{
             position: absolute;
             top: 270px;
-            left: 150px;
-            width: 30%;
+            left: 100px;
+            max-width: 600px;
+            padding: 0 100px 0 0;
 
             /* border: 1px solid red; */
         }
         .index_bannerTitle img{
             width: 100%;
+        }
+        .index_bannerTitle p{
+            color: #fff;
+            font-family: 14px;
+            letter-spacing: 0.1rem;
+            max-width: 300px;
+            margin: 50px 0 0 0;
         }
 
         .index_storyBox{
@@ -151,7 +159,7 @@
 
             /* border: 1px solid red; */
         }
-        .index_newsTitle{
+        .index_title{
             color: #cc543a;
             font-size: 30px;
             font-weight: 700;
@@ -170,7 +178,7 @@
             /* border: 1px solid red; */
         }
         .index_news_container02{
-            margin: 70px 0 0 0;
+            margin: 70px 0 80px 0;
         }
         .NEWS02{
             width: 270px;
@@ -196,6 +204,119 @@
 
             border: 1px solid red;
         }
+
+/* index_explore */
+        .index_exploreArea{
+            width: 100%;
+            overflow: hidden;
+
+            padding: 80px 0 80px 0 ;
+            background-image:url(./image/bcc2.png);
+
+            position: relative;
+        }
+        .index_explore1{
+            max-width: 450px;
+            margin: 0 85px 0 85px;
+
+            /* border: 1px solid red; */
+        }
+        .index_explore2{
+            max-width: 450px;
+
+            /* border: 1px solid red; */
+        }
+        .index_explore1 img, .index_explore2 img{
+            width: 100%;
+        }
+        
+
+
+        .index_exploreTitle{
+            max-width: 550px;
+            position: absolute;
+            right: -150px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* border: 1px solid red; */
+        }
+        .index_exploreTitle img{
+            width: 100%;
+            transform: rotate(80deg);
+
+            /* border: 1px solid red; */
+        }
+        .index_exploreTitle p{
+            position: absolute;
+
+            /* border: 1px solid red; */
+        }
+
+/* index_service */
+        .index_serviceArea{
+            /* background-image:url(./image/bccLine.png); */
+        }
+        .index_serviceTitle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .indrex_serviceContainer{
+            /* width: 100%; */
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            border: 1px solid red;
+        }
+        .index_serviceBox{
+            width: 100%;
+            align-items: center;
+            border: 1px solid red;
+        }
+        .serviceImg{
+            width: 800px;
+        }
+        .index_serviceBox img{
+            width: 100%;
+            
+        }
+
+
+/* index_shop */
+        .index_shopArea{
+            padding: 150px 0 150px 0;
+        }
+        .index_shopWordBox{
+            /* width: 10%; */
+            margin: 0 20px;
+            padding: 0;
+            text-align: right;
+            border: 1px solid red;
+        }
+        .index_productBox{
+            width: 1260px;
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+        .index_productImgBox{
+            max-width: 420px;
+            filter: grayscale(0.5);
+            
+        }
+        .index_productImgBox img{
+            width: 100%;
+        }
+        .index_shopTitle span{
+            
+            display: block;
+            border: 1px solid red;
+        }
     </style>
 </head>
 <body>
@@ -210,6 +331,7 @@
 
         <div class="index_bannerTitle">
             <img src="./image/index_bannerTitle.png" alt="">
+            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
         </div>
 
         <div class="index_storyBox d-flex justify-content-end align-items-center">
@@ -253,7 +375,7 @@
 
     <div class="index_newsArea d-flex justify-content-between">
         <div class="index_newsBox col-6">
-            <div class="index_newsTitle">NEWS</div>
+            <div class="index_newsTitle index_title">NEWS</div>
             <div class="index_news_container01 mt-4">
                 <div class="NEWS01 d-flex align-items-center">
                     <p>May 21, 2021</p>
@@ -269,12 +391,12 @@
                 </div>
             </div>
             <div class="index_news_container02 d-flex justify-content-between">
-                <div class="NEWS02">
+                <div class="NEWS02 mr-2">
                     <img class="mb-3" src="./image/indexNews(1).jpg" alt="">
                     <p>Mar 01, 2021</p>
                     <span>理成了兩所好畫隊，下也去何不醫況</span>
                 </div>
-                <div class="NEWS02">
+                <div class="NEWS02 mr-2">
                     <img class="mb-3" src="./image/indexNews(2).jpg" alt="">
                     <p>Feb 22, 2021</p>
                     <span>理成了兩所好畫隊，下也去何</span>
@@ -705,6 +827,63 @@
                     </g>
                   </svg>
             </div>
+        </div>
+    </div>
+
+    <div class="index_exploreArea d-flex align-items-center">
+        <div class="index_exploreBox d-flex">
+            <div class="index_explore1">
+                <img src="./image/indexExplore(1).jpg" alt="">
+            </div>
+
+            <div class="index_explore2">
+                <img src="./image/indexExplore(2).jpg" alt="">
+            </div>
+        </div>
+
+        <div class="index_title index_exploreTitle">
+            <div class="titleImgBox"><img src="./image/circle.png" alt=""></div>
+            <p>EXPLORE</p>
+        </div>
+    </div>
+
+    <div class="index_serviceArea d-flex">
+        <div class="index_serviceTitle index_title col-3">ONLINE<br>SERVICE</div>
+        <div class="indrex_serviceContainer col-9">
+            <div class="index_serviceBox d-flex">
+                <div class="serviceImg"><img src="./image/light.jpg" alt=""></div>
+                <div class="index_serviceWordBox">
+                    <p>祈福點燈</p>
+                    <span>Lighting the Lamp</span>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="index_serviceBox d-flex justify-content-end">
+                <div class="index_serviceWordBox">
+                    <p>求神問卜</p>
+                    <span>Online Draw Lots</span>
+                    <div class="line"></div>
+                </div>
+                <div class="serviceImg"><img src="./image/poem.jpg" alt=""></div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="index_shopArea d-flex justify-content-end">
+        <div class="index_shopWordBox col-1">
+            <div class="index_shopTitle">
+                <p class="index_title">SHOP</p>
+                <div class="longArrow"></div>
+                <span>也得不眾動不一歷只片、港食化的要，雄體專結量腦戰像收天況百國影來，論將是春時花去視：年紀月大不英本別智加包男神收天況百。</span>
+            </div>
+        </div>
+        <div class="index_productBox">
+            <div class="index_productImgBox"><img src="./image/indexproduct(1).jpg" alt=""></div>
+            <div class="index_productImgBox"><img src="./image/indexproduct(2).jpg" alt=""></div>
+            <div class="index_productImgBox"><img src="./image/indexproduct(3).jpg" alt=""></div>
+            <div class="index_productImgBox"><img src="./image/indexproduct(4).jpg" alt=""></div>
+            <div class="index_productImgBox"><img src="./image/indexproduct(5).jpg" alt=""></div>
+            <div class="index_productImgBox"><img src="./image/indexproduct(6).jpg" alt=""></div>
         </div>
     </div>
 

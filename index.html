@@ -135,13 +135,13 @@
 
 
 
-
+/* nav-bar */
         .index_navbar {
             width: 100%;
             background-image: url(./image/navbar-bcc.jpg);
             padding: 50px 0;
 
-            /* border: 1px solid red; */
+            border: 1px solid red;
         }
 
         .navBox ul {
@@ -227,7 +227,7 @@
             text-align: right;
             margin: 0;
 
-            border: 1px solid red;
+            /* border: 1px solid red; */
         }
 
         /* index_explore */
@@ -363,36 +363,38 @@
 
         .index_shopWordBox {
             /* width: 10%; */
-            margin: 0 20px;
+            margin: 0 40px;
             padding: 0;
             text-align: right;
-            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            /* border: 1px solid red; */
+        }
+        .longArrow svg{
+            margin: 0 100px 0 0;
+        }
+        .index_shopinfo span {
+        display: block;
+
+        /* border: 1px solid red; */
         }
 
         .index_productBox {
             width: 1260px;
             display: flex;
             flex-wrap: wrap;
-
         }
-
         .index_productImgBox {
             max-width: 420px;
             filter: grayscale(0.5);
-
         }
-
         .index_productImgBox img {
             width: 100%;
         }
-
-        .index_shopTitle span {
-
-            display: block;
-            border: 1px solid red;
-        }
-
-        /* footer */
+        
+/* footer */
         .index_footer {
             background-image: url(./image/bcc2.png);
             display: flex;
@@ -443,7 +445,6 @@
                             fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1" />
                     </g>
                 </svg>
-
             </div>
             <p class="index_storyBtn">STORY</p>
         </div>
@@ -1743,7 +1744,17 @@
         <div class="index_shopWordBox col-1">
             <div class="index_shopTitle">
                 <p class="index_title">SHOP</p>
-                <div class="longArrow"></div>
+                <div class="longArrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="102.413" height="20.327" viewBox="0 0 102.413 20.327">
+                        <g id="Group_41" data-name="Group 41" transform="translate(-1670.5 -3470.086)">
+                          <line id="Line_38" data-name="Line 38" x2="100" transform="translate(1671.5 3480.25)" fill="none" stroke="#606060" stroke-linecap="round" stroke-width="2"/>
+                          <line id="Line_39" data-name="Line 39" x1="9.333" y1="8.75" transform="translate(1762.167 3471.5)" fill="none" stroke="#606060" stroke-linecap="round" stroke-width="2"/>
+                          <line id="Line_40" data-name="Line 40" x1="9.333" y2="8.75" transform="translate(1762.167 3480.25)" fill="none" stroke="#606060" stroke-linecap="round" stroke-width="2"/>
+                        </g>
+                      </svg>                      
+                </div>
+            </div>
+            <div class="index_shopinfo">
                 <span>也得不眾動不一歷只片、港食化的要，雄體專結量腦戰像收天況百國影來，論將是春時花去視：年紀月大不英本別智加包男神收天況百。</span>
             </div>
         </div>

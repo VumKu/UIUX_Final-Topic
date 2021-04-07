@@ -140,8 +140,11 @@
             width: 100%;
             background-image: url(./image/navbar-bcc.jpg);
             padding: 50px 0;
+            position: sticky;
+            top: 0px;
+            z-index: 99;
 
-            border: 1px solid red;
+            /* border: 1px solid red; */
         }
 
         .navBox ul {
@@ -230,7 +233,7 @@
             /* border: 1px solid red; */
         }
 
-        /* index_explore */
+/* index_explore */
         .index_exploreArea {
             width: 100%;
             overflow: hidden;
@@ -259,8 +262,6 @@
             width: 100%;
         }
 
-
-
         .index_exploreTitle {
             max-width: 550px;
             position: absolute;
@@ -287,7 +288,7 @@
         }
 
 
-        /* index_service/trip */
+/* index_service & trip */
         .index_serviceTitle,
         .index_tripTitle {
             display: flex;
@@ -355,8 +356,24 @@
             text-align: right;
         }
 
+/* index_goTop */
+        .index_goTopImg{
+            width: 50px;
+            position: fixed;
+            bottom: -100px;
+            right: 20px;
+            transition: .5s;
+        }
+        .index_goTopImg svg{
+            width: 100%;
+        }
+        .index_goTopImg.show{
+            bottom: 20px;
+        }
 
-        /* index_shop */
+
+
+/* index_shop */
         .index_shopArea {
             padding: 150px 0 150px 0;
         }
@@ -376,11 +393,10 @@
             margin: 0 100px 0 0;
         }
         .index_shopinfo span {
-        display: block;
+            display: block;
 
-        /* border: 1px solid red; */
+            /* border: 1px solid red; */
         }
-
         .index_productBox {
             width: 1260px;
             display: flex;
@@ -458,8 +474,6 @@
             <li class="slider_num"></li>
         </ul>
     </div>
-
-
 
     <div class="index_navbar">
         <div class="navBox">
@@ -1768,6 +1782,24 @@
         </div>
     </div>
 
+    <div class="index_goTop d-flex justify-content-end">
+        <div class="index_goTopImg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <g id="Group_81" data-name="Group 81" transform="translate(-1810 -2767)">
+                  <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1810 2767)" fill="#fff" stroke="#535353" stroke-width="1" opacity="0.8">
+                    <circle cx="40" cy="40" r="40" stroke="none"/>
+                    <circle cx="40" cy="40" r="39.5" fill="none"/>
+                  </g>
+                  <g id="Group_30" data-name="Group 30" transform="translate(-1630.25 4496) rotate(-90)">
+                    <path id="Path_3" data-name="Path 3" d="M0,0H35" transform="translate(1671.5 3480.25)" fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2"/>
+                    <line id="Line_39" data-name="Line 39" x1="9.333" y1="8.75" transform="translate(1697.167 3471.5)" fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2"/>
+                    <line id="Line_40" data-name="Line 40" x1="9.333" y2="8.75" transform="translate(1697.167 3480.25)" fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2"/>
+                  </g>
+                </g>
+            </svg>              
+        </div>
+    </div>
+
     <div class="index_footer">
         <div class="index_footerWord">
             <p>灣廟 | Taiwan Temple</p>
@@ -1807,6 +1839,28 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
+
+        
+        
+
+// Go-Top
+        $(window).scroll(function(event){
+            let scrollTop = $(window).scrollTop();
+            console.log(scrollTop);
+
+            if (scrollTop >= 1000){
+                
+                $(".index_goTopImg").addClass('show');
+            }else{
+                $(".index_goTopImg").removeClass('show');
+            }
+        });
+
+        $('.index_goTopImg').click(function(){
+            $("html,body").animate({
+            scrollTop: 0,
+            },700);
+        });
 
     </script>
 </body>

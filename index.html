@@ -133,9 +133,15 @@
         }
 
 
+        /* burgurBar */
+        .index_barImg {
+            margin: 30px;
+            display: none;
+        }
 
 
-/* nav-bar */
+
+        /* nav-bar */
         .index_navbar {
             width: 100%;
             background-image: url(./image/navbar-bcc.jpg);
@@ -233,7 +239,8 @@
             /* border: 1px solid red; */
         }
 
-/* index_explore */
+
+        /* index_explore */
         .index_exploreArea {
             width: 100%;
             overflow: hidden;
@@ -288,7 +295,7 @@
         }
 
 
-/* index_service & trip */
+        /* index_service & trip */
         .index_serviceTitle,
         .index_tripTitle {
             display: flex;
@@ -323,7 +330,8 @@
 
         .serviceImg,
         .tripImg {
-            width: 800px;
+            max-width: 800px;
+            border: 1px solid red;
 
         }
 
@@ -356,24 +364,26 @@
             text-align: right;
         }
 
-/* index_goTop */
-        .index_goTopImg{
+        /* index_goTop */
+        .index_goTopImg {
             width: 50px;
             position: fixed;
             bottom: -100px;
             right: 20px;
             transition: .5s;
         }
-        .index_goTopImg svg{
+
+        .index_goTopImg svg {
             width: 100%;
         }
-        .index_goTopImg.show{
+
+        .index_goTopImg.show {
             bottom: 20px;
         }
 
 
 
-/* index_shop */
+        /* index_shop */
         .index_shopArea {
             padding: 150px 0 150px 0;
         }
@@ -389,28 +399,33 @@
 
             /* border: 1px solid red; */
         }
-        .longArrow svg{
+
+        .longArrow svg {
             margin: 0 100px 0 0;
         }
+
         .index_shopinfo span {
             display: block;
 
             /* border: 1px solid red; */
         }
+
         .index_productBox {
             width: 1260px;
             display: flex;
             flex-wrap: wrap;
         }
+
         .index_productImgBox {
             max-width: 420px;
             filter: grayscale(0.5);
         }
+
         .index_productImgBox img {
             width: 100%;
         }
-        
-/* footer */
+
+        /* footer */
         .index_footer {
             background-image: url(./image/bcc2.png);
             display: flex;
@@ -430,7 +445,145 @@
             width: 75%;
             padding: 0 10px;
         }
+
+
+
+        /* RWD */
+
+        @media (max-width: 770px) {
+
+            /* bar */
+            .index_barImg {
+                display: block;
+            }
+
+            .index_navbar {
+                display: none;
+            }
+
+            /* logo */
+            .index_logoBox p {
+                display: none;
+            }
+
+            .index_logoBox {
+                width: 50%;
+                padding: 0;
+            }
+
+            .logoImg {
+                justify-content: center;
+            }
+
+            .index_newsArea {
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .index_newsBox {
+                margin: 30px 0 0 0;
+            }
+
+            .index_title {
+                text-align: center;
+            }
+
+            .index_newsBox {
+                width: 90%;
+            }
+
+            .NEWS01 p,
+            .NEWS02 p {
+                font-size: 14px;
+                margin: 0 20px 0 0;
+            }
+
+            .NEWS01 span,
+            .NEWS02 span {
+                font-size: 12px;
+                /* margin: 0 20px 0 0; */
+            }
+
+            .index_news_container02 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .NEWS02 {
+                margin: 0 0 20px 0;
+
+            }
+
+
+            /* explore */
+            .index_exploreTitle {
+                right: 50px;
+            }
+
+            .titleImgBox img {
+                width: 120%;
+                opacity: .3;
+            }
+
+            .index_exploreTitle p {
+                font-size: 22px;
+                top: 30px;
+                left: 130px;
+                z-index: 2;
+            }
+
+            .index_explore1 {
+                padding: 36px 18px;
+                margin: 0;
+                z-index: 2;
+            }
+
+            .index_explore2 {
+                padding: 36px 18px;
+                z-index: 2;
+            }
+
+            /* SERVICE */
+            .index_serviceTitle {
+                font-size: 16px;
+
+            }
+
+            .index_light {
+                background-image: url(./image/light.jpg);
+                background-size: contain;
+            }
+
+            .index_lots {
+                background-image: url(./image/poem.jpg);
+                background-size: contain;
+            }
+
+            .index_tripBox {
+                background-image: url(./image/tour.jpg);
+                background-size: contain;
+            }
+
+            .serviceImg,
+            .tripImg {
+                display: none;
+            }
+
+
+            /* shop */
+            .index_productImgBox {
+                max-width: 100px;
+                margin: 3px 10px 5px 0;
+            }
+
+            .index_shopWordBox {
+                margin: 0 40px 0 20px;
+            }
+        }
     </style>
+
+
 </head>
 
 <body>
@@ -475,6 +628,21 @@
         </ul>
     </div>
 
+    <div class="index_burgurBar">
+        <div class="index_barImg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
+                <g id="Group_135" data-name="Group 135" transform="translate(-341.5 -1313.5)">
+                    <line id="Line_50" data-name="Line 50" x2="23" transform="translate(342.5 1314.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_51" data-name="Line 51" x2="23" transform="translate(342.5 1323.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                    <line id="Line_52" data-name="Line 52" x2="23" transform="translate(342.5 1332.5)" fill="none"
+                        stroke="#707070" stroke-linecap="round" stroke-width="2" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
     <div class="index_navbar">
         <div class="navBox">
             <ul>
@@ -501,7 +669,7 @@
     </div>
 
     <div class="index_newsArea d-flex justify-content-between">
-        <div class="index_newsBox col-6">
+        <div class="index_newsBox col-sm-6">
             <div class="index_newsTitle index_title">NEWS</div>
             <div class="index_news_container01 mt-4">
                 <div class="NEWS01 d-flex align-items-center">
@@ -518,12 +686,12 @@
                 </div>
             </div>
             <div class="index_news_container02 d-flex justify-content-between">
-                <div class="NEWS02 mr-2">
+                <div class="NEWS02">
                     <img class="mb-3" src="./image/indexNews(1).jpg" alt="">
                     <p>Mar 01, 2021</p>
                     <span>理成了兩所好畫隊，下也去何不醫況</span>
                 </div>
-                <div class="NEWS02 mr-2">
+                <div class="NEWS02">
                     <img class="mb-3" src="./image/indexNews(2).jpg" alt="">
                     <p>Feb 22, 2021</p>
                     <span>理成了兩所好畫隊，下也去何</span>
@@ -1721,7 +1889,7 @@
     <div class="index_serviceArea d-flex">
         <div class="index_serviceTitle index_title col-3">ONLINE<br>SERVICE</div>
         <div class="indrex_serviceContainer col-9">
-            <div class="index_serviceBox d-flex">
+            <div class="index_serviceBox index_light d-flex">
                 <div class="serviceImg mr-5"><img src="./image/light.jpg" alt=""></div>
                 <div class="index_serviceWordBox">
                     <p>祈福點燈</p>
@@ -1729,7 +1897,7 @@
                     <hr class="line">
                 </div>
             </div>
-            <div class="index_serviceBox d-flex justify-content-end">
+            <div class="index_serviceBox index_lots d-flex justify-content-end">
                 <div class="index_serviceWordBox index_lotsBox">
                     <p>求神問卜</p>
                     <span>Online Draw Lots</span>
@@ -1755,17 +1923,23 @@
     </div>
 
     <div class="index_shopArea d-flex justify-content-end">
-        <div class="index_shopWordBox col-1">
+        <div class="index_shopWordBox col-sm-1">
             <div class="index_shopTitle">
                 <p class="index_title">SHOP</p>
                 <div class="longArrow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="102.413" height="20.327" viewBox="0 0 102.413 20.327">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="102.413" height="20.327"
+                        viewBox="0 0 102.413 20.327">
                         <g id="Group_41" data-name="Group 41" transform="translate(-1670.5 -3470.086)">
-                          <line id="Line_38" data-name="Line 38" x2="100" transform="translate(1671.5 3480.25)" fill="none" stroke="#606060" stroke-linecap="round" stroke-width="2"/>
-                          <line id="Line_39" data-name="Line 39" x1="9.333" y1="8.75" transform="translate(1762.167 3471.5)" fill="none" stroke="#606060" stroke-linecap="round" stroke-width="2"/>
-                          <line id="Line_40" data-name="Line 40" x1="9.333" y2="8.75" transform="translate(1762.167 3480.25)" fill="none" stroke="#606060" stroke-linecap="round" stroke-width="2"/>
+                            <line id="Line_38" data-name="Line 38" x2="100" transform="translate(1671.5 3480.25)"
+                                fill="none" stroke="#606060" stroke-linecap="round" stroke-width="2" />
+                            <line id="Line_39" data-name="Line 39" x1="9.333" y1="8.75"
+                                transform="translate(1762.167 3471.5)" fill="none" stroke="#606060"
+                                stroke-linecap="round" stroke-width="2" />
+                            <line id="Line_40" data-name="Line 40" x1="9.333" y2="8.75"
+                                transform="translate(1762.167 3480.25)" fill="none" stroke="#606060"
+                                stroke-linecap="round" stroke-width="2" />
                         </g>
-                      </svg>                      
+                    </svg>
                 </div>
             </div>
             <div class="index_shopinfo">
@@ -1779,24 +1953,6 @@
             <div class="index_productImgBox"><img src="./image/indexproduct(4).jpg" alt=""></div>
             <div class="index_productImgBox"><img src="./image/indexproduct(5).jpg" alt=""></div>
             <div class="index_productImgBox"><img src="./image/indexproduct(6).jpg" alt=""></div>
-        </div>
-    </div>
-
-    <div class="index_goTop d-flex justify-content-end">
-        <div class="index_goTopImg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
-                <g id="Group_81" data-name="Group 81" transform="translate(-1810 -2767)">
-                  <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1810 2767)" fill="#fff" stroke="#535353" stroke-width="1" opacity="0.8">
-                    <circle cx="40" cy="40" r="40" stroke="none"/>
-                    <circle cx="40" cy="40" r="39.5" fill="none"/>
-                  </g>
-                  <g id="Group_30" data-name="Group 30" transform="translate(-1630.25 4496) rotate(-90)">
-                    <path id="Path_3" data-name="Path 3" d="M0,0H35" transform="translate(1671.5 3480.25)" fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2"/>
-                    <line id="Line_39" data-name="Line 39" x1="9.333" y1="8.75" transform="translate(1697.167 3471.5)" fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2"/>
-                    <line id="Line_40" data-name="Line 40" x1="9.333" y2="8.75" transform="translate(1697.167 3480.25)" fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2"/>
-                  </g>
-                </g>
-            </svg>              
         </div>
     </div>
 
@@ -1833,6 +1989,30 @@
         </div>
     </div>
 
+    <div class="index_goTop d-flex justify-content-end">
+        <div class="index_goTopImg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <g id="Group_81" data-name="Group 81" transform="translate(-1810 -2767)">
+                    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1810 2767)" fill="#fff"
+                        stroke="#535353" stroke-width="1" opacity="0.8">
+                        <circle cx="40" cy="40" r="40" stroke="none" />
+                        <circle cx="40" cy="40" r="39.5" fill="none" />
+                    </g>
+                    <g id="Group_30" data-name="Group 30" transform="translate(-1630.25 4496) rotate(-90)">
+                        <path id="Path_3" data-name="Path 3" d="M0,0H35" transform="translate(1671.5 3480.25)"
+                            fill="none" stroke="#2d2a2a" stroke-linecap="round" stroke-width="2" />
+                        <line id="Line_39" data-name="Line 39" x1="9.333" y1="8.75"
+                            transform="translate(1697.167 3471.5)" fill="none" stroke="#2d2a2a" stroke-linecap="round"
+                            stroke-width="2" />
+                        <line id="Line_40" data-name="Line 40" x1="9.333" y2="8.75"
+                            transform="translate(1697.167 3480.25)" fill="none" stroke="#2d2a2a" stroke-linecap="round"
+                            stroke-width="2" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
 
 
 
@@ -1840,26 +2020,26 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
 
-        
-        
 
-// Go-Top
-        $(window).scroll(function(event){
+
+
+        // Go-Top
+        $(window).scroll(function (event) {
             let scrollTop = $(window).scrollTop();
             console.log(scrollTop);
 
-            if (scrollTop >= 1000){
-                
+            if (scrollTop >= 1000) {
+
                 $(".index_goTopImg").addClass('show');
-            }else{
+            } else {
                 $(".index_goTopImg").removeClass('show');
             }
         });
 
-        $('.index_goTopImg').click(function(){
+        $('.index_goTopImg').click(function () {
             $("html,body").animate({
-            scrollTop: 0,
-            },700);
+                scrollTop: 0,
+            }, 700);
         });
 
     </script>

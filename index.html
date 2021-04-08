@@ -59,7 +59,6 @@
 
         .index_bannerTitle p {
             color: #fff;
-            font-family: 14px;
             letter-spacing: 0.1rem;
             max-width: 300px;
             margin: 50px 0 0 0;
@@ -138,7 +137,29 @@
             margin: 30px;
             display: none;
         }
+        /* overlayNav */
+        .index_overlayNav{
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            /* display: none; */
+            transition: .7s;
 
+            transform: translateY(-2500px);
+        }
+        .index_overlayNavBox{
+            text-align: center;
+        }
+
+        .index_overlayNavBox li{
+            color: #fff;
+            letter-spacing: 0.2rem;
+            padding: 25px 0;
+        } 
 
 
         /* nav-bar */
@@ -163,7 +184,7 @@
             /* border: 1px solid red; */
         }
 
-        .navBox li {
+        .navBox li{
             font-size: 16px;
             color: #000;
             letter-spacing: 0.2rem;
@@ -173,7 +194,7 @@
             padding: 0 10px;
         }
 
-        .navBox a {
+        .navBox a, .index_overlayNavBox a {
             text-decoration: none;
         }
 
@@ -331,14 +352,17 @@
         .serviceImg,
         .tripImg {
             max-width: 800px;
-            border: 1px solid red;
-
         }
 
         .index_serviceBox img,
         .index_tripBox img {
             width: 100%;
 
+        }
+
+        .index_serviceWordBox,
+        .index_tripWordBox{
+            margin: 0 10px;
         }
 
         .index_serviceWordBox p,
@@ -371,6 +395,7 @@
             bottom: -100px;
             right: 20px;
             transition: .5s;
+            z-index: 9;
         }
 
         .index_goTopImg svg {
@@ -417,7 +442,7 @@
         }
 
         .index_productImgBox {
-            max-width: 420px;
+            width: 33%;
             filter: grayscale(0.5);
         }
 
@@ -451,8 +476,12 @@
         /* RWD */
 
         @media (max-width: 770px) {
+            /* banner */
+            .index_bannerTitle p {
+                font-size: 14px;
+            }
 
-            /* bar */
+            /* nav */
             .index_barImg {
                 display: block;
             }
@@ -460,6 +489,17 @@
             .index_navbar {
                 display: none;
             }
+
+            .index_overlayNav{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            
+
+            
 
             /* logo */
             .index_logoBox p {
@@ -475,6 +515,7 @@
                 justify-content: center;
             }
 
+            /* news */
             .index_newsArea {
                 flex-direction: column-reverse;
                 justify-content: center;
@@ -485,12 +526,13 @@
                 margin: 30px 0 0 0;
             }
 
-            .index_title {
-                text-align: center;
-            }
-
             .index_newsBox {
                 width: 90%;
+            }
+
+            .NEWS01{
+                flex-direction: column;
+                align-items: flex-start !important;
             }
 
             .NEWS01 p,
@@ -545,24 +587,26 @@
             }
 
             /* SERVICE */
-            .index_serviceTitle {
+            .index_serviceTitle, .index_tripTitle {
                 font-size: 16px;
+                padding: 0 20px;
 
             }
 
             .index_light {
                 background-image: url(./image/light.jpg);
-                background-size: contain;
+                background-size: cover;                
             }
 
             .index_lots {
                 background-image: url(./image/poem.jpg);
-                background-size: contain;
+                background-size: cover;
+                
             }
 
             .index_tripBox {
                 background-image: url(./image/tour.jpg);
-                background-size: contain;
+                background-size: cover;
             }
 
             .serviceImg,
@@ -570,16 +614,40 @@
                 display: none;
             }
 
+            .index_serviceWordBox, .index_tripWordBox{
+                margin: 30px 15px;
+            }
+
+            .index_serviceWordBox p,
+            .index_tripWordBox p {
+                font-size: 12px;
+                margin: 0;
+                color: #fff;
+            }
+
+            .index_serviceWordBox span,
+            .index_tripWordBox span {
+                font-size: 10px;
+                color: #fff;
+            }
+
+            .line {
+                display: none;
+            }
+
 
             /* shop */
             .index_productImgBox {
-                max-width: 100px;
+                width: 120px;
                 margin: 3px 10px 5px 0;
             }
 
             .index_shopWordBox {
                 margin: 0 40px 0 20px;
             }
+            .index_shopArea {
+            padding: 100px 0;
+        }
         }
     </style>
 
@@ -640,6 +708,37 @@
                         stroke="#707070" stroke-linecap="round" stroke-width="2" />
                 </g>
             </svg>
+        </div>
+    </div>
+
+    <div class="index_overlayNav">
+        <div class="index_closeBtn mb-4">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 20 20">
+                <title>close</title>
+                <path fill='#fff' d="M10 8.586l-7.071-7.071-1.414 1.414 7.071 7.071-7.071 7.071 1.414 1.414 7.071-7.071 7.071 7.071 1.414-1.414-7.071-7.071 7.071-7.071-1.414-1.414-7.071 7.071z"></path>
+                </svg>
+        </div>
+        <div class="index_overlayNavBox">
+            <ul>
+                <a href="">
+                    <li>EXPLORE<span>/</span>探索</li>
+                </a>
+                <a href="">
+                    <li>TRIP<span>/</span>巡禮</li>
+                </a>
+                <a href="">
+                    <li>SERVICE<span>/</span>線上服務</li>
+                </a>
+                <a href="">
+                    <li>SHOP<span>/</span>商店</li>
+                </a>
+                <a href="">
+                    <li>CART<span>/</span>購物車</li>
+                </a>
+                <a href="">
+                    <li>MEMBER<span>/</span>會員中心</li>
+                </a>
+            </ul>
         </div>
     </div>
 
@@ -2020,7 +2119,26 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
 
+        // overlayNav進場
+        $('.index_barImg').click(function(){
 
+            let navPosition = {
+                transform: 'translateY(0)'
+            }
+
+            $(".index_overlayNav").css(navPosition);
+        })
+
+        // overlayNav退場
+        $('.index_closeBtn').click(function(){
+
+        let navPosition = {
+            transform: 'translateY(-2500px)',
+            transition: '.7s'
+        }
+
+        $(".index_overlayNav").css(navPosition);
+        })
 
 
         // Go-Top

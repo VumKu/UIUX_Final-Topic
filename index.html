@@ -297,7 +297,7 @@
             position: absolute;
             z-index: 1;
 
-            animation: walk 7s steps(9, end) infinite;
+            /* animation: walk 2s steps(9, end) infinite; */
             /* border: 1px solid red; */
         }
 
@@ -402,11 +402,56 @@
         .index_tripBox {
             border-bottom: 1px solid #ccc;
         }
+        
+        .index_lightBox, .index_tripWordBox{
+            position: relative;
+            right: 0;
+            transition: .6s;
+            z-index: 2;
+        }
+        .index_light:hover .index_lightBox, .index_tripBox:hover .index_tripWordBox{
+            right: 280px;
+            color: #fff;
+            transition: .6s;
+        }
+        .index_light:hover .line-r, .index_tripBox:hover .line-r{
+            width: 100px;
+            background-color: #fff;
+            right: 230px;
+            transition: .8s;
+        }
 
         .serviceImg,
         .tripImg {
             max-width: 800px;
+            position: relative;
         }
+
+        .serviceImg::before, .tripImg::before{
+            content: "";
+            width: 0%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.4);
+
+            opacity: 0;
+            transition: .6s;
+        }
+
+        .index_lots:hover .serviceImg::before{
+            width: 100%;
+            opacity: 1;
+            transition: .6s;
+        }
+        .index_light:hover .serviceImg::before, .index_tripBox:hover .tripImg::before{
+            width: 100%;
+            opacity: 1;
+            transition: .6s;
+        }
+
 
         .index_serviceBox img,
         .index_tripBox img {
@@ -431,15 +476,43 @@
             letter-spacing: 0.1rem;
         }
 
-        .line {
+        .line-l, .line-r {
             width: 50px;
             height: 1px;
             background-color: #cc543a;
             margin-left: 140px;
         }
+        .line-l{
+            position: relative;
+            left: 0;
+            transition: .8s;
+        }
+        .line-r{
+            position: relative;
+            right: 0;
+            transition: .8s;
+        }
+
 
         .index_lotsBox {
             text-align: right;
+            position: relative;
+            left: 0;
+            transition: .6s;
+            z-index: 2;
+        }        
+
+        .index_lots:hover .index_lotsBox{
+            left: 250px;
+            color: #fff;
+            transition: .6s;
+        }
+
+        .index_lots:hover .line-l{
+            width: 100px;
+            background-color: #fff;
+            left: 90px;
+            transition: .8s;
         }
 
         /* index_goTop */
@@ -482,8 +555,9 @@
         .longArrow{
             position: relative;
             left: 0;
+            transition: .5s;
         }
-        .longArrow:hover{
+        .index_shopTitle:hover .longArrow{
             left: 20px;
             transition: .5s;
         }
@@ -2076,6 +2150,7 @@
             </div>
             <div class="index_foot">
                 <img src="./image/footprints.png" alt="">
+                
             </div>
         </div>
     </div>
@@ -2102,17 +2177,17 @@
         <div class="indrex_serviceContainer col-9">
             <div class="index_serviceBox index_light d-flex">
                 <div class="serviceImg mr-5"><img src="./image/light.jpg" alt=""></div>
-                <div class="index_serviceWordBox">
+                <div class="index_serviceWordBox index_lightBox">
                     <p>祈福點燈</p>
                     <span>Lighting the Lamp</span>
-                    <hr class="line">
+                    <hr class="line-r">
                 </div>
             </div>
             <div class="index_serviceBox index_lots d-flex justify-content-end">
                 <div class="index_serviceWordBox index_lotsBox">
                     <p>求神問卜</p>
                     <span>Online Draw Lots</span>
-                    <hr class="line">
+                    <hr class="line-l">
                 </div>
                 <div class="serviceImg ml-5"><img src="./image/poem.jpg" alt=""></div>
             </div>
@@ -2126,7 +2201,7 @@
                 <div class="index_tripWordBox">
                     <p>參訪旅遊</p>
                     <span>Taiwan Temple Tour</span>
-                    <hr class="line">
+                    <hr class="line-r">
                 </div>
             </div>
         </div>

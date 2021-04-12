@@ -318,6 +318,7 @@
         /* index_explore */
         .index_exploreArea {
             width: 100%;
+            height: 800px;
             overflow: hidden;
 
             padding: 80px 0 80px 0;
@@ -326,23 +327,129 @@
             position: relative;
         }
 
-        .index_explore1 {
-            max-width: 450px;
-            margin: 0 85px 0 85px;
+        .index_exploreBox{
+            height: 640px;
+        }
+
+        .index_ep2:hover .exImg2{
+            height: 640px;
+            transition: .6s;
+        }
+        .index_ep2:hover .epWord2{
+            color: #fff;
+            transition: .4s;
+        }
+        .index_ep2:hover .epLine2{
+            width: 250px;
+            background-color: #fff;
+            transition: .6s;
+        }
+        .index_ep2:hover .exImg2::before{
+            height: 100%;
+            opacity: 1;
+            transition: .6s;
+        }
+
+        .index_explore {
+            width: 450px;
+            margin-left: 100px;
+            
+            position: relative;
 
             /* border: 1px solid red; */
         }
 
-        .index_explore2 {
+        .index_exImg{
             max-width: 450px;
+            height: 640px;
+            overflow: hidden;
+            position: relative;
+        }
 
-            /* border: 1px solid red; */
+        .exImg1::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            opacity: 1;
+        }
+
+        .exImg2::before{
+            content: "";
+            width: 100%;
+            height: 40%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            opacity: 0;
+            transition: .6s;
+        }
+
+        .exImg2{
+            height: 230px;
+            transition: .6s;
         }
 
         .index_explore1 img,
         .index_explore2 img {
             width: 100%;
+            height: 100%;
         }
+
+        .index_epWordBox{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 2;
+
+            /* border: 1px solid red; */
+        }
+
+        .epWord1 p, .epWord2 p{
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: 0.2rem;
+            margin: 0;
+            transition: .4s;
+        }
+
+        .epWord1 span, .epWord2 span{
+            width: 75%;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 15px;
+            transition: .6s;
+        }
+        .epWord1{
+            color: #fff;
+        }
+        .epLine1{
+            width: 250px;
+            height: 1px;
+            background-color: #fff;
+        }
+        .epLine2{
+            width: 40px;
+            height: 1px;
+            background-color: #cc543a;
+            transition: .6s;
+        }
+
+
 
         .index_exploreTitle {
             max-width: 550px;
@@ -768,6 +875,7 @@
                 padding: 36px 18px;
                 z-index: 2;
             }
+
 
             /* SERVICE */
             .index_serviceTitle, .index_tripTitle {
@@ -2157,12 +2265,22 @@
 
     <div class="index_exploreArea d-flex align-items-center">
         <div class="index_exploreBox d-flex">
-            <div class="index_explore1">
-                <img src="./image/indexExplore(1).jpg" alt="">
+            <div class="index_explore index_ep1">
+                <div class="index_exImg exImg1"><img src="./image/indexExplore(1).jpg" alt=""></div>                
+                <div class="index_epWordBox epWord1">
+                    <p>Story</p>
+                    <hr class="epLine1">
+                    <span>也得不眾動不一歷只片、港食化的要，雄體專結量腦戰像收天況百國影來……論將是春時花去視：年紀月大不英本別智加包男神。</span>
+                </div>
             </div>
 
-            <div class="index_explore2">
-                <img src="./image/indexExplore(2).jpg" alt="">
+            <div class="index_explore index_ep2">
+                <div class="index_exImg exImg2"><img src="./image/indexExplore(2).jpg" alt=""></div>
+                <div class="index_epWordBox epWord2">
+                    <p>Explore More +</p>
+                    <hr class="epLine2">
+                    <span>也得不眾動不一歷只片、港食化的要，雄體專結量腦戰像收天況百國影來……論將是春時花去視：年紀月大不英本別智加包男神。</span>
+                </div>
             </div>
         </div>
 
@@ -2343,6 +2461,49 @@
         }
 
         $(".index_overlayNav").css(navPosition);
+        })
+
+        //Explore
+        $(".index_ep2").mouseenter(function(){
+            let ep1Word = {
+                color: '#000'
+            }
+
+            let ep1Line = {
+                width: '40px',
+                backgroundColor: '#cc543a',
+                transition: '.6s'
+            }
+
+            let ep1Box = {
+                height: '230px',
+                transition: '.6s'
+            }
+
+            $(this).siblings().find(".epWord1").css(ep1Word);
+            $(this).siblings().find(".epLine1").css(ep1Line);
+            $(this).siblings().find(".exImg1").css(ep1Box);
+        })
+        $(".index_ep2").mouseleave(function(){
+
+            let ep1Word = {
+                color: '#fff'
+            }
+
+            let ep1Line = {
+                width: '250px',
+                backgroundColor: '#fff',
+                transition: '.6s'
+            }
+
+            let ep1Box = {
+                height: '640px',
+                transition: '.6s'
+            }
+
+            $(this).siblings().find(".epWord1").css(ep1Word);
+            $(this).siblings().find(".epLine1").css(ep1Line);
+            $(this).siblings().find(".exImg1").css(ep1Box);
         })
 
 

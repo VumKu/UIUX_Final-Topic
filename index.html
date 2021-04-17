@@ -22,6 +22,7 @@
             cursor: url('./image/cursor.png') 15 15, auto;
         }
 
+/* banner */
         .index_banner {
             max-width: 1920px;
             height: 100vh;
@@ -42,6 +43,18 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: relative;
+        }
+
+        .index_bannerBox li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.03);
+            z-index: 1;
         }
 
         .index_bannerTitle {
@@ -50,6 +63,7 @@
             left: 100px;
             max-width: 600px;
             padding: 0 100px 0 0;
+            z-index: 2;
 
             /* border: 1px solid red; */
         }
@@ -69,6 +83,7 @@
             position: absolute;
             top: 50px;
             width: 100%;
+            z-index: 2;
             /* height: 100%; */
 
             color: #fff;
@@ -97,9 +112,7 @@
 
         }
 
-
-
-
+/* slide-dots */
         .slider_dots {
             position: absolute;
             list-style-type: none;
@@ -111,6 +124,8 @@
             flex-direction: column;
             align-items: flex-end;
             justify-content: center;
+
+            z-index: 2;
 
             /* border: 1px solid red; */
         }
@@ -125,11 +140,30 @@
             /* border: 1px solid red; */
         }
 
-        .slider_dots .slider_num {
+        .index_banner .slider_num {
             width: 20px;
-            height: 20px;
             background-color: transparent;
-            border: 1px solid red;
+            color: #fff;
+            font-size: 18px;
+            opacity: 1 !important;
+            letter-spacing: 0.2rem;
+            /* border: 1px solid red; */
+        }
+
+        /* slideDown-arrow */
+        .index_slideDown{
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: 90%;
+
+            animation: downArrow 1.5s linear infinite;
+        }
+
+        @keyframes downArrow{
+            to{
+                top: 94%;
+            }
         }
 
 
@@ -294,31 +328,48 @@
 
         .index_foot{
             width: 65%;
-            position: absolute;
-            z-index: 1;
+            position: relative;
+            opacity: 0.1;
+            margin: 20px 0 0 0;
+            
 
-            /* animation: walk 2s steps(9, end) infinite; */
+            animation: prints 12s steps(12, end) infinite;
+
             /* border: 1px solid red; */
         }
 
-        @keyframes walk{
-            from{
-                transform: translateY(0);
-            }
+        @keyframes prints{
             to{
-                transform: translateY(900px);
+                opacity: 1;
+                transition: .7s;
             }
         }
-
         .index_foot img{
             width: 100%;
         }
+
+        .index_foot_cover{
+            position: absolute;
+            top: 0px;
+            left: 0;
+            background: url(./image/bcc.png);
+            height: 100%;
+            width: 100%;
+            animation: walk 12s steps(12, end) infinite;
+        }
+
+        @keyframes walk{
+            to{
+                transform: translateY(1050px);
+            }
+        }
+
 
 
         /* index_explore */
         .index_exploreArea {
             width: 100%;
-            height: 800px;
+            max-height: 800px;
             overflow: hidden;
 
             padding: 80px 0 80px 0;
@@ -351,7 +402,7 @@
         }
 
         .index_explore {
-            width: 450px;
+            /* width: 450px; */
             margin-left: 100px;
             
             position: relative;
@@ -361,7 +412,7 @@
 
         .index_exImg{
             max-width: 450px;
-            height: 640px;
+            max-height: 640px;
             overflow: hidden;
             position: relative;
         }
@@ -409,10 +460,9 @@
             transition: .6s;
         }
 
-        .index_explore1 img,
-        .index_explore2 img {
+        .index_exImg img,
+        .index_exImg img {
             width: 100%;
-            height: 100%;
         }
 
         .index_epWordBox{
@@ -480,7 +530,18 @@
             width: 100%;
             transform: rotate(80deg);
 
+            animation: rotate 19s linear infinite;
+
             /* border: 1px solid red; */
+        }
+
+        @keyframes rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
         }
 
         .index_exploreTitle p {
@@ -512,14 +573,14 @@
         }
 
         .index_serviceBox,
-        .index_tripBox {
+        .index_trip {
             width: 100%;
             align-items: center;
 
             border-top: 1px solid #ccc;
         }
 
-        .index_tripBox {
+        .index_trip {
             border-bottom: 1px solid #ccc;
         }
         
@@ -529,12 +590,12 @@
             transition: .6s;
             z-index: 2;
         }
-        .index_light:hover .index_lightBox, .index_tripBox:hover .index_tripWordBox{
+        .index_light:hover .index_lightBox, .index_trip:hover .index_tripWordBox{
             right: 280px;
             color: #fff;
             transition: .6s;
         }
-        .index_light:hover .line-r, .index_tripBox:hover .line-r{
+        .index_light:hover .line-r, .index_trip:hover .line-r{
             width: 100px;
             background-color: #fff;
             right: 230px;
@@ -566,7 +627,7 @@
             opacity: 1;
             transition: .6s;
         }
-        .index_light:hover .serviceImg::before, .index_tripBox:hover .tripImg::before{
+        .index_light:hover .serviceImg::before, .index_trip:hover .tripImg::before{
             width: 100%;
             opacity: 1;
             transition: .6s;
@@ -574,7 +635,7 @@
 
 
         .index_serviceBox img,
-        .index_tripBox img {
+        .index_trip img {
             width: 100%;
 
         }
@@ -860,25 +921,84 @@
 
             }
 
+            .index_foot{
+                display: none;
+            }
+
 
             /* explore */
+            .index_exploreArea{
+                /* padding: 0; */
+                flex-direction: column-reverse;
+                /* border: 1px solid red; */
+            }
+            .index_exploreBox{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .index_exploreBox span{
+                display: none;
+            }
+
+            .index_explore{
+                margin: 0;
+                padding: 0 18px 30px 18px;
+            }
+
+            .index_exImg{
+                max-height: 300px;
+            }
+            .exImg2{
+                height: 300px;
+            }
+
+
+            .exImg1::before{
+                height: 100%;
+            }
+            .index_ep2:hover .exImg2{
+                height: 300px;
+            }
+            .exImg2::before{
+                height: 100%;
+                opacity: 1;
+            }
+            .exImg1.no-before::before{
+                height: 100%;
+                opacity: 1;
+            }
+            .epWord1 p, .epWord2 p{
+                color: #fff;
+            }
+            .epLine1{
+                width: 40px;
+                background-color: #cc543a;
+            }
+
+
+
+
+
             .index_exploreTitle {
-                right: 50px;
+                position: static;
+                /* border: 1px solid red; */
             }
 
             .titleImgBox img {
-                width: 120%;
-                opacity: .3;
+                display: none;
             }
 
             .index_exploreTitle p {
+                position: static;
                 font-size: 22px;
-                top: 30px;
-                left: 130px;
-                z-index: 2;
+                padding-bottom: 15px;
+                /* top: 30px; */
+                
+                /* z-index: 2; */
             }
 
-            .index_explore1 {
+            /* .index_explore1 {
                 padding: 36px 18px;
                 margin: 0;
                 z-index: 2;
@@ -887,30 +1007,68 @@
             .index_explore2 {
                 padding: 36px 18px;
                 z-index: 2;
-            }
+            } */
 
 
             /* SERVICE */
             .index_serviceTitle, .index_tripTitle {
-                font-size: 16px;
-                padding: 0 20px;
+                display: none;
 
             }
 
             .index_light {
                 background-image: url(./image/light.jpg);
-                background-size: cover;                
+                background-size: cover;
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                margin-bottom: 5px;                
             }
 
             .index_lots {
                 background-image: url(./image/poem.jpg);
                 background-size: cover;
                 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                margin-bottom: 5px;
+            }
+            .index_lotsBox{
+                text-align: center;
             }
 
-            .index_tripBox {
+
+            .index_trip {
                 background-image: url(./image/tour.jpg);
                 background-size: cover;
+                text-align: center;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .index_serviceBox, .index_tripBox{
+                position: relative;
+            }
+
+            .index_light::before, .index_lots::before, .index_trip::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                background: rgba(0, 0, 0, 0.2);
             }
 
             .serviceImg,
@@ -920,6 +1078,7 @@
 
             .index_serviceWordBox, .index_tripWordBox{
                 margin: 30px 15px;
+                /* border: 1px solid red; */
             }
 
             .index_serviceWordBox p,
@@ -935,7 +1094,7 @@
                 color: #fff;
             }
 
-            .line {
+            .line-r, .line-l {
                 display: none;
             }
 
@@ -996,8 +1155,24 @@
             <li></li>
             <li></li>
             <li></li>
-            <li class="slider_num"></li>
+            <li class="slider_num">01</li>
+            
         </ul>
+
+        <div class="index_slideDown">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36.987" height="36.184" viewBox="0 0 36.987 36.184">
+                <g id="arrow" transform="translate(-922.797 -973.297)">
+                  <g id="arrow-2" data-name="arrow" transform="translate(924.211 990.986)">
+                    <line id="Line_6" data-name="Line 6" x2="24.154" transform="translate(0 0) rotate(45)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                    <line id="Line_7" data-name="Line 7" x2="24.154" transform="translate(34.159 0) rotate(135)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                  </g>
+                  <g id="arrow-3" data-name="arrow" transform="translate(924.211 974.711)" opacity="0.6">
+                    <line id="Line_6-2" data-name="Line 6" x2="24.154" transform="translate(0 0) rotate(45)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                    <line id="Line_7-2" data-name="Line 7" x2="24.154" transform="translate(34.159 0) rotate(135)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                  </g>
+                </g>
+            </svg>
+        </div>
     </div>
 
     <div class="index_burgurBar">
@@ -2270,8 +2445,8 @@
                 </svg>
             </div>
             <div class="index_foot">
-                <img src="./image/footprints.png" alt="">
-                
+                <img src="./image/footprint0.png" alt="">
+                <span class="index_foot_cover"></span>
             </div>
         </div>
     </div>
@@ -2305,7 +2480,7 @@
 
     <div class="index_serviceArea d-flex">
         <div class="index_serviceTitle index_title col-3">ONLINE<br>SERVICE</div>
-        <div class="indrex_serviceContainer col-9">
+        <div class="indrex_serviceContainer col-md-9 col-12">
             <div class="index_serviceBox index_light d-flex">
                 <div class="serviceImg mr-5"><img src="./image/light.jpg" alt=""></div>
                 <div class="index_serviceWordBox index_lightBox">
@@ -2314,6 +2489,7 @@
                     <hr class="line-r">
                 </div>
             </div>
+
             <div class="index_serviceBox index_lots d-flex justify-content-end">
                 <div class="index_serviceWordBox index_lotsBox">
                     <p>求神問卜</p>
@@ -2326,8 +2502,8 @@
     </div>
 
     <div class="index_tripArea d-flex">
-        <div class="indrex_tripContainer col-9">
-            <div class="index_tripBox d-flex">
+        <div class="indrex_tripContainer col-md-9 col-12">
+            <div class="index_tripBox index_trip d-flex">
                 <div class="tripImg mr-5"><img src="./image/tour.jpg" alt=""></div>
                 <div class="index_tripWordBox">
                     <p>參訪旅遊</p>
@@ -2454,6 +2630,26 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
+        //banner-carousel
+        let page = 0;
+
+        $('.slider_dots li').eq(page).css('opacity', '1').siblings().css('opacity', '0.5');
+
+        setInterval(() => {
+            page = page+1;
+
+            if (page > 4){
+                page = 0;
+            }
+
+            console.log('page =', page)
+
+            $('.index_bannerBox').css('left', page * -1920 + 'px')
+            $('.slider_dots li').eq(page).css('opacity', '1').siblings().css('opacity', '0.5')
+            $('.slider_num').html('0'+ (page+1))
+            // $('.slider_num').css('opacity', '1')
+            
+        }, 3000);
 
         // overlayNav進場
         $('.index_barImg').click(function(){
@@ -2521,6 +2717,38 @@
             $(this).siblings().find(".exImg1").css(ep1Box);
             $(this).siblings().find(".exImg1").removeClass('no-before');
         })
+
+        // 是為了RWD後的click寫的，以及避免hover的狀態留下
+        if (window.screen.width < 700){
+
+            // $(".index_ep1").click(function(){
+
+            // let ep1Box = {
+            //     height: '300px'
+            // }
+            // let ep1Line = {
+            //     width: '250px',
+            //     backgroundColor: '#fff',
+            //     transition: '.6s'
+            // }
+
+            // $(this).find(".exImg1").css(ep1Box);
+            // $(this).find(".epLine1").css(ep1Line);
+            // $(this).find(".exImg1").addClass('no-before');
+
+            // })
+
+            $(".index_ep2").click(function(){
+
+                let ep1Box = {
+                height: '300px'
+            }
+
+            $(this).siblings().find(".exImg1").css(ep1Box);
+
+            })
+
+        }
 
 
 

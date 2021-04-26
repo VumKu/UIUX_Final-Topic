@@ -323,8 +323,9 @@
             box-shadow: none;
             background-color: #f5f4f1;
         }
-
-
+        .close:focus{
+            outline: none;
+        }
 
         .btn-primary-re{
             background-color: #cc543a;
@@ -1247,7 +1248,7 @@
                 display: none;
             }
             .index_shopLink{
-                display: blockm;
+                display: block;
         }
         }
     </style>
@@ -1330,22 +1331,22 @@
         <div class="index_overlayNavBox">
             <ul>
                 <a href="">
-                    <li>EXPLORE<span>/</span>探索</li>
+                    <li class="nav_news">最新消息</li>
                 </a>
                 <a href="">
-                    <li>TRIP<span>/</span>巡禮</li>
+                    <li>探索灣廟</li>
                 </a>
                 <a href="">
-                    <li>SERVICE<span>/</span>線上服務</li>
+                    <li>線上服務</li>
                 </a>
                 <a href="">
-                    <li>SHOP<span>/</span>商店</li>
+                    <li>聖地巡禮</li>
                 </a>
                 <a href="">
-                    <li>CART<span>/</span>購物車</li>
+                    <li>祈福商店</li>
                 </a>
                 <a href="">
-                    <li>MEMBER<span>/</span>會員中心</li>
+                    <li>購物車</li>
                 </a>
             </ul>
         </div>
@@ -1374,11 +1375,11 @@
                 </a>
             </ul>
             <ul class="index_nav_right">
-                <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+                <a href="" data-toggle="modal" data-target="#loginCenter">
                     <li>登入</li>
                 </a>
                 <span>|</span>
-                <a href="">
+                <a href="" data-toggle="modal" data-target="#registerCenter">
                     <li>註冊</li>
                 </a>
             </ul>
@@ -1386,11 +1387,11 @@
     </div>
   
   <!-- login -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="loginCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">登入 | Log In</h5>
+          <h5 class="modal-title" id="exampleModalCenterTitle">登入 | LOGIN</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -1410,12 +1411,72 @@
           <button type="button" class="btn btn-primary btn-primary-re">登入</button>
         </div>
         <div class="modal-footer2 mt-3">
-            <a class="mr-5" href="">忘記密碼</a>
-            <a href="">註冊帳號</a>
+            <a class="mr-5" href="" data-toggle="modal" data-target="#lostPassword" id="passwordbtn">忘記密碼</a>
+            <a href="" data-toggle="modal" data-target="#registerCenter" id="registerbtn">註冊帳號</a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- lost password -->
+  <div class="modal fade" id="lostPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">找回密碼</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class="mt-3">
+                <div class="form-group mb-3">
+                  <p>請輸入您註冊的電子郵件，您將會在電子郵件信箱中收到重設密碼的連結。</p>
+                  <input type="text" class="form-control" id="account-name" placeholder="Email">
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-primary-re">送出</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- register -->
+  <div class="modal fade" id="registerCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">註冊 | REGISTER</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class="mt-3">
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="account-name" placeholder="User Name">
+                </div>
+                <div class="form-group mb-3">
+                  <input type="text" class="form-control" id="account-name" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="password-text" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password-text" placeholder="Repeat Password">
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-primary-re">註冊</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
 
     <div class="index_newsArea d-flex justify-content-between">
         <div class="index_newsBox col-sm-6">
@@ -2835,6 +2896,18 @@
         //     $(this).text(`最新消息`)
             
         // })
+
+        //Login hide
+        $('#registerbtn').click(function(){
+            $('#loginCenter').modal('hide');
+        })
+
+        $('#passwordbtn').click(function(){
+            $('#loginCenter').modal('hide');
+        })
+
+
+
 
         // overlayNav進場
         $('.index_barImg').click(function(){

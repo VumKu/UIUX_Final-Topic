@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- 小圖示 -->
     <script src="https://kit.fontawesome.com/271f30e909.js" crossorigin="anonymous"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+        
     <title>Document</title>
 
     <style>
         body {
-            font-family: 'Sitka Display', NSimSun, 'sans-serif';
+            font-family: 'Faustina', serif;
             background-image: url(./image/bcc.png);
         }
 
@@ -30,20 +38,21 @@
             /* border: 1px solid red; */
         }
 
-        .navbar{
+        .navbar {
             width: 90%;
             display: flex;
             margin: 10px auto;
+            padding: 0;
 
 
             /* border: 1px solid red; */
         }
 
         .index_navbar {
-            width: 100%;
+            width: 94%;
             display: flex;
             align-items: center;
-            
+
 
             /* border: 1px solid red; */
         }
@@ -62,21 +71,21 @@
             display: flex;
             justify-content: space-between;
             list-style-type: none;
-            /* margin: 0 0 0 100px; */
-
+            margin: 0px;
             /* border: 1px solid red; */
         }
+
         .index_nav_right {
             /* width: 100%; */
             display: flex;
             justify-content: flex-end;
             list-style-type: none;
-            /* margin: 0; */
+            margin: 0;
 
             /* border: 1px solid red; */
         }
 
-        .navBox li{
+        .navBox li {
             font-family: 'Noto Serif TC', serif;
             font-size: 16px;
             color: #000;
@@ -88,24 +97,25 @@
             /* border: 1px solid red; */
         }
 
-        .navBox li:hover{
-           color: #cc543a;
-           bottom: 10px;
-           
+        .navBox li:hover {
+            color: #cc543a;
+            bottom: 10px;
+
         }
 
         .navBox span {
             padding: 0 10px;
         }
 
-        .navBox a, .index_overlayNavBox a {
+        .navBox a,
+        .index_overlayNavBox a {
             text-decoration: none;
         }
 
         .navline {
             width: 80%;
             height: 1px;
-            background-color:rgba(203, 203, 203, .7);
+            background-color: rgba(203, 203, 203, .7);
             border: 0;
             margin: 0 auto;
         }
@@ -113,9 +123,6 @@
         nav img {
             width: 6%;
         }
-
-
-        
     </style>
 </head>
 
@@ -123,7 +130,7 @@
     <nav>
         <div class="navbar">
             <!-- 請依檔案位置修改logo路徑 -->
-            <img src='/logo.svg'>
+            <img src='/UIUX_Final-Topic/logo.svg'>
 
             <div class="index_navbar">
                 <div class="navBox">

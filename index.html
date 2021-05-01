@@ -18,8 +18,8 @@
     <style>
         body {
             font-family: 'Faustina', serif;
-            background-image: url(./image/bcc.png);
-            cursor: url('./image/cursor.png') 15 15, auto;
+            background-image: url(./img/bcc.png);
+            cursor: url('./img/cursor.png') 15 15, auto;
         }
 
         /* banner */
@@ -154,7 +154,7 @@
         .index_slideDown {
             position: absolute;
             z-index: 2;
-            left: 49%;
+            left: calc(50% - 30px);
             top: 88%;
         }
 
@@ -243,7 +243,7 @@
         /* nav-bar */
         .index_navbar {
             width: 100%;
-            background-image: url(./image/navbar-bcc.jpg);
+            background-image: url(./img/navbar-bcc.jpg);
             padding: 40px 0;
             position: sticky;
             top: 0px;
@@ -295,7 +295,10 @@
         .navBox li:hover {
             color: #cc543a;
             bottom: 10px;
+        }
 
+        .index_nav_left li{
+            width: 77px;
         }
 
         .navBox span {
@@ -307,9 +310,49 @@
             text-decoration: none;
         }
 
+        .nav_news::before{
+            content: "最新消息";
+        }
+        .nav_news:hover::before{
+            content: "NEWS";
+        }
+        .nav_explore::before{
+            content: "探索灣廟";
+        }
+        .nav_explore:hover::before{
+            content: "EXPLORE";
+        }
+        .nav_serv::before{
+            content: "線上服務";
+        }
+        .nav_serv:hover::before{
+            content: "SERVICE";
+        }
+        .nav_trip::before{
+            content: "聖地巡禮";
+        }
+        .nav_trip:hover::before{
+            content: "TRIP";
+        }
+        .nav_shop::before{
+            content: "祈福商店";
+        }
+        .nav_shop:hover::before{
+            content: "SHOP";
+        }
+        .nav_cart::before{
+            content: "購物車";
+        }
+        .nav_cart:hover::before{
+            content: "CART";
+        }
+
+
+
+
         /* login */
         .modal-content {
-            background-image: url(./image/bcc2.png);
+            background-image: url(./img/bcc2.png);
             border: 0;
             border-radius: 45px;
             padding: 30px;
@@ -337,7 +380,7 @@
         }
 
         .form-control {
-            background-image: url(./image/bcc.png);
+            background-image: url(./img/bcc.png);
             border-radius: 0%;
             border: 1px solid #cdcdcd;
         }
@@ -484,7 +527,7 @@
             position: absolute;
             top: 0px;
             left: 0;
-            background: url(./image/bcc.png);
+            background: url(./img/bcc.png);
             height: 100%;
             width: 100%;
             animation: walk 12s steps(12, end) infinite;
@@ -505,7 +548,7 @@
             overflow: hidden;
 
             padding: 80px 0 80px 0;
-            background-image: url(./image/bcc2.png);
+            background-image: url(./img/bcc2.png);
 
             position: relative;
         }
@@ -982,7 +1025,7 @@
 
         /* footer */
         .index_footer {
-            background-image: url(./image/bcc2.png);
+            background-image: url(./img/bcc2.png);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1078,7 +1121,7 @@
 
             .NEWS01 span,
             .NEWS02 span {
-                font-size: 12px;
+                font-size: 14px;
                 /* margin: 0 20px 0 0; */
             }
 
@@ -1198,7 +1241,7 @@
             }
 
             .index_light {
-                background-image: url(./image/light.jpg);
+                background-image: url(./img/light.jpg);
                 background-size: cover;
                 text-align: center;
 
@@ -1211,7 +1254,7 @@
             }
 
             .index_lots {
-                background-image: url(./image/poem.jpg);
+                background-image: url(./img/poem.jpg);
                 background-size: cover;
 
                 display: flex;
@@ -1228,7 +1271,7 @@
 
 
             .index_trip {
-                background-image: url(./image/tour.jpg);
+                background-image: url(./img/tour.jpg);
                 background-size: cover;
                 text-align: center;
 
@@ -1293,6 +1336,7 @@
 
             .index_shopArea {
                 flex-direction: column;
+                padding: 80px 0;
 
             }
 
@@ -1335,15 +1379,15 @@
 <body>
     <div class="index_banner">
         <ul class="index_bannerBox d-flex">
-            <li><img src="./image/index_bannerImg(1).jpg" alt=""></li>
-            <li><img src="./image/index_bannerImg(2).jpg" alt=""></li>
-            <li><img src="./image/index_bannerImg(3).jpg" alt=""></li>
-            <li><img src="./image/index_bannerImg(4).jpg" alt=""></li>
-            <li><img src="./image/index_bannerImg(5).jpg" alt=""></li>
+            <li><img src="./img/index_bannerImg(1).jpg" alt=""></li>
+            <li><img src="./img/index_bannerImg(2).jpg" alt=""></li>
+            <li><img src="./img/index_bannerImg(3).jpg" alt=""></li>
+            <li><img src="./img/index_bannerImg(4).jpg" alt=""></li>
+            <li><img src="./img/index_bannerImg(5).jpg" alt=""></li>
         </ul>
 
         <div class="index_bannerTitle">
-            <img src="./image/index_bannerTitle.png" alt="">
+            <img src="./img/index_bannerTitle.png" alt="">
             <p>或許，對於長年在台灣生活的我們，寺廟對我們太平常了，大部分人都不會注意到寺廟內精緻的藝術，然而寺廟建築絕對是在地歷史與文化的象徵。先民渡海來台，帶來了傳統文化習俗，同時也播下了信仰的種子，逐漸發芽、進而開花與結果。
             </p>
         </div>
@@ -1435,22 +1479,22 @@
         <div class="navBox">
             <ul class="index_nav_left">
                 <a href="">
-                    <li class="nav_news">最新消息</li>
+                    <li class="nav_news"></li>
                 </a>
                 <a href="">
-                    <li>探索灣廟</li>
+                    <li class="nav_explore"></li>
                 </a>
                 <a href="">
-                    <li>線上服務</li>
+                    <li class="nav_serv"></li>
                 </a>
                 <a href="">
-                    <li>聖地巡禮</li>
+                    <li class="nav_trip"></li>
                 </a>
                 <a href="">
-                    <li>祈福商店</li>
+                    <li class="nav_shop"></li>
                 </a>
                 <a href="">
-                    <li>購物車</li>
+                    <li class="nav_cart"></li>
                 </a>
             </ul>
             <ul class="index_nav_right">
@@ -1491,8 +1535,8 @@
                     <button type="button" class="btn btn-primary btn-primary-re">登入</button>
                 </div>
                 <div class="modal-footer2 mt-3">
-                    <a class="mr-5" href="" data-toggle="modal" data-target="#lostPassword" id="passwordbtn">忘記密碼</a>
-                    <a href="" data-toggle="modal" data-target="#registerCenter" id="registerbtn">註冊帳號</a>
+                    <a class="mr-5" data-toggle="modal" data-target="#lostPassword" id="passwordbtn">忘記密碼</a>
+                    <a data-toggle="modal" data-target="#registerCenter" id="registerbtn">註冊帳號</a>
                 </div>
             </div>
         </div>
@@ -1579,17 +1623,17 @@
             </div>
             <div class="index_news_container02 d-flex justify-content-between">
                 <div class="NEWS02">
-                    <img class="mb-3" src="./image/indexNews(1).jpg" alt="">
+                    <img class="mb-3" src="./img/indexNews(1).jpg" alt="">
                     <p>Mar 01, 2021</p>
                     <span>理成了兩所好畫隊，下也去何不醫況</span>
                 </div>
                 <div class="NEWS02">
-                    <img class="mb-3" src="./image/indexNews(2).jpg" alt="">
+                    <img class="mb-3" src="./img/indexNews(2).jpg" alt="">
                     <p>Feb 22, 2021</p>
                     <span>理成了兩所好畫隊，下也去何</span>
                 </div>
                 <div class="NEWS02">
-                    <img class="mb-3" src="./image/indexNews(3).jpg" alt="">
+                    <img class="mb-3" src="./img/indexNews(3).jpg" alt="">
                     <p>Feb 03, 2021</p>
                     <span>理成了兩所好畫隊，下也去何不醫</span>
                 </div>
@@ -2759,7 +2803,7 @@
                 </svg>
             </div>
             <div class="index_foot">
-                <img src="./image/footprint0.png" alt="">
+                <img src="./img/footprint0.png" alt="">
                 <span class="index_foot_cover"></span>
             </div>
         </div>
@@ -2768,7 +2812,7 @@
     <div class="index_exploreArea d-flex align-items-center">
         <div class="index_exploreBox d-flex">
             <div class="index_explore index_ep1">
-                <div class="index_exImg exImg1"><img src="./image/indexExplore(1).jpg" alt=""></div>
+                <div class="index_exImg exImg1"><img src="./img/indexExplore(1).jpg" alt=""></div>
                 <div class="index_epWordBox epWord1">
                     <p>Story</p>
                     <hr class="epLine1">
@@ -2777,7 +2821,7 @@
             </div>
 
             <div class="index_explore index_ep2">
-                <div class="index_exImg exImg2"><img src="./image/indexExplore(2).jpg" alt=""></div>
+                <div class="index_exImg exImg2"><img src="./img/indexExplore(2).jpg" alt=""></div>
                 <div class="index_epWordBox epWord2">
                     <p>Explore More +</p>
                     <hr class="epLine2">
@@ -2787,7 +2831,7 @@
         </div>
 
         <div class="index_title index_exploreTitle">
-            <div class="titleImgBox"><img src="./image/circle.png" alt=""></div>
+            <div class="titleImgBox"><img src="./img/circle.png" alt=""></div>
             <p>EXPLORE</p>
         </div>
     </div>
@@ -2796,7 +2840,7 @@
         <div class="index_serviceTitle index_title col-3">ONLINE<br>SERVICE</div>
         <div class="indrex_serviceContainer col-md-9 col-12">
             <div class="index_serviceBox index_light d-flex">
-                <div class="serviceImg mr-5"><img src="./image/light.jpg" alt=""></div>
+                <div class="serviceImg mr-5"><img src="./img/light.jpg" alt=""></div>
                 <div class="index_serviceWordBox index_lightBox">
                     <p>祈福點燈</p>
                     <span>Lighting the Lamp</span>
@@ -2810,7 +2854,7 @@
                     <span>Online Draw Lots</span>
                     <hr class="line-l">
                 </div>
-                <div class="serviceImg ml-5"><img src="./image/poem.jpg" alt=""></div>
+                <div class="serviceImg ml-5"><img src="./img/poem.jpg" alt=""></div>
             </div>
         </div>
     </div>
@@ -2818,7 +2862,7 @@
     <div class="index_tripArea d-flex">
         <div class="indrex_tripContainer col-md-9 col-12">
             <div class="index_tripBox index_trip d-flex">
-                <div class="tripImg mr-5"><img src="./image/tour.jpg" alt=""></div>
+                <div class="tripImg mr-5"><img src="./img/tour.jpg" alt=""></div>
                 <div class="index_tripWordBox">
                     <p>參訪旅遊</p>
                     <span>Taiwan Temple Tour</span>
@@ -2855,27 +2899,27 @@
         </div>
         <div class="index_productBox">
             <div class="index_productImgBox">
-                <img src="./image/indexproduct(1).jpg" alt="">
+                <img src="./img/indexproduct(1).jpg" alt="">
                 <p class="index_productName">皮革平安符</p>
             </div>
             <div class="index_productImgBox">
-                <img src="./image/indexproduct(2).jpg" alt="">
+                <img src="./img/indexproduct(2).jpg" alt="">
                 <p class="index_productName">廟宇手繪明信片</p>
             </div>
             <div class="index_productImgBox">
-                <img src="./image/indexproduct(3).jpg" alt="">
+                <img src="./img/indexproduct(3).jpg" alt="">
                 <p class="index_productName">好運養生茶</p>
             </div>
             <div class="index_productImgBox">
-                <img src="./image/indexproduct(4).jpg" alt="">
+                <img src="./img/indexproduct(4).jpg" alt="">
                 <p class="index_productName">開運符餅乾</p>
             </div>
             <div class="index_productImgBox">
-                <img src="./image/indexproduct(5).jpg" alt="">
+                <img src="./img/indexproduct(5).jpg" alt="">
                 <p class="index_productName">羊毛氈手縫鑰匙套</p>
             </div>
             <div class="index_productImgBox">
-                <img src="./image/indexproduct(6).jpg" alt="">
+                <img src="./img/indexproduct(6).jpg" alt="">
                 <p class="index_productName">檜木陶瓷杯</p>
             </div>
         </div>
